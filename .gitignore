@@ -42,5 +42,7 @@ replay_pid*
 .history
 .ionide
 
-# Peronal directories
-caio_bkp/
+
+.DS_Store
+.DS_Store/
+
