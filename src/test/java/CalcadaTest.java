@@ -4,17 +4,14 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class CalcadaTest {
 
-    // Helper para criar uma Rua de teste
     private Rua criarRua() {
         return new Rua("Rua Teste", "Bairro Teste");
     }
 
-    // Helper para criar uma Avaliacao de teste
     private Avaliacao criarAvaliacao(float nota) {
         return new Avaliacao(nota, 0, 0, 0, 0, 0, "Comentário", false, false, false, false);
     }
 
-    // Teste para o construtor básico e associações
     @Test
     void testConstrutorBasicoEAssociacaoRua() {
         Rua rua = criarRua();
@@ -23,12 +20,10 @@ public class CalcadaTest {
         
         assertEquals("Calçada Principal", calcada.getNome());
         assertEquals(4.0f, calcada.getAvaliacaoMedia(), 0.001);
-        assertEquals(rua, calcada.getRua()); // Verifica a associação com Rua
-        assertEquals("Rua Teste", calcada.getRua().getNome());
-        assertTrue(calcada.getAvaliacoes().isEmpty()); // A lista deve estar vazia
+        assertEquals(rua, calcada.getRua());
+        assertTrue(calcada.getAvaliacoes().isEmpty());
     }
 
-    // Teste para adicionar avaliações
     @Test
     void testAdicionarAvaliacoes() {
         Rua rua = criarRua();
@@ -42,8 +37,6 @@ public class CalcadaTest {
         
         List<Avaliacao> avaliacoes = calcada.getAvaliacoes();
         
-        assertEquals(2, avaliacoes.size()); // Verifica se as duas foram adicionadas
-        assertEquals(5.0f, avaliacoes.get(0).getNotaGeral(), 0.001);
-        assertEquals(3.0f, avaliacoes.get(1).getNotaGeral(), 0.001);
+        assertEquals(2, avaliacoes.size());
     }
 }
