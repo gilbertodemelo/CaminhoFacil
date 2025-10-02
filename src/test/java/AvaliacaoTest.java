@@ -28,14 +28,14 @@ public class AvaliacaoTest {
         assertTrue(avaliacao.isRebaixamentoGuia());
     }
 
-
     @Test
-    void testVerificaNotaCadeirante() {
+    void testVerificaIluminacaoNoturna() {
         Avaliacao avaliacao = new Avaliacao();
-        avaliacao.setNotaCadeirante(3.5f);
-        assertEquals(3.5f, avaliacao.getNotaCadeirante());
+        avaliacao.setIluminacaoNoturna(true);
+        assertTrue(avaliacao.isIluminacaoNoturna());
+        
+        avaliacao.setIluminacaoNoturna(false);
+        assertFalse(avaliacao.isIluminacaoNoturna());
     }
-   
-
    
 }
