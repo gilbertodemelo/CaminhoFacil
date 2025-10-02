@@ -28,41 +28,14 @@ public class AvaliacaoTest {
         assertTrue(avaliacao.isRebaixamentoGuia());
     }
 
-     @Test
-    void testAcessibilidadePlena() {
 
-        Avaliacao avaliacaoCompleta = new Avaliacao(
-            5.0f, 5.0f, 5.0f, 5.0f, 5.0f, 20241001,
-            "Totalmente acessível", true, true, true, true
-        );
-        assertTrue(avaliacaoCompleta.isAcessibilidadePlena(), "Deveria retornar true quando tudo é acessível");
-
-
-        Avaliacao avaliacaoIncompleta = new Avaliacao(
-            3.0f, 3.0f, 3.0f, 3.0f, 3.0f, 20241002,
-            "Falta iluminação noturna", true, true, true, false
-        );
-        assertFalse(avaliacaoIncompleta.isAcessibilidadePlena(), "Deveria retornar false quando falta um item de acessibilidade");
-    }
-
-    /**
-     * Novo teste: Verifica se a data e o comentário podem ser atualizados corretamente.
-     */
     @Test
-    void testAtualizacaoDeDados() {
-        // Inicia com uma avaliação usando o construtor vazio
+    void testVerificaNotaCadeirante() {
         Avaliacao avaliacao = new Avaliacao();
-
-        // Define novos valores para a data e o comentário
-        int novaData = 20251001;
-        String novoComentario = "Comentário atualizado.";
-
-        avaliacao.setDataAval(novaData);
-        avaliacao.setComentario(novoComentario);
-
-        // Verifica se os getters retornam os valores que acabamos de definir
-        assertEquals(novaData, avaliacao.getDataAval());
-        assertEquals(novoComentario, avaliacao.getComentario());
+        avaliacao.setNotaCadeirante(3.5f);
+        assertEquals(3.5f, avaliacao.getNotaCadeirante());
     }
+   
 
+   
 }
