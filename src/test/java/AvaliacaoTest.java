@@ -45,5 +45,24 @@ public class AvaliacaoTest {
         assertFalse(avaliacaoIncompleta.isAcessibilidadePlena(), "Deveria retornar false quando falta um item de acessibilidade");
     }
 
+    /**
+     * Novo teste: Verifica se a data e o comentário podem ser atualizados corretamente.
+     */
+    @Test
+    void testAtualizacaoDeDados() {
+        // Inicia com uma avaliação usando o construtor vazio
+        Avaliacao avaliacao = new Avaliacao();
+
+        // Define novos valores para a data e o comentário
+        int novaData = 20251001;
+        String novoComentario = "Comentário atualizado.";
+
+        avaliacao.setDataAval(novaData);
+        avaliacao.setComentario(novoComentario);
+
+        // Verifica se os getters retornam os valores que acabamos de definir
+        assertEquals(novaData, avaliacao.getDataAval());
+        assertEquals(novoComentario, avaliacao.getComentario());
+    }
 
 }
